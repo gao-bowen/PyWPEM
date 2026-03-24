@@ -28,6 +28,12 @@
 
 Other tools include [XQueryer](https://github.com/Bin-Cao/XQueryer) for initial structure inference and [PRDNet](https://github.com/Bin-Cao/PRDNet) for crystal property prediction.
 
+---
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Bin-Cao/PyWPEM&type=Date)](https://star-history.com/#Bin-Cao/PyWPEM&Date)
+
+
+
  
 ---
 
@@ -137,10 +143,6 @@ If you use **PyWPEM** in your research, please cite:
   url={https://arxiv.org/abs/2602.16372v1}
 }
 ```
-
----
-
-[![Star History Chart](https://api.star-history.com/svg?repos=Bin-Cao/PyWPEM&type=Date)](https://star-history.com/#Bin-Cao/PyWPEM&Date)
 
 
 
