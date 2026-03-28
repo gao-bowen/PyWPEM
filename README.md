@@ -36,9 +36,15 @@ Other tools include [XQueryer](https://github.com/Bin-Cao/XQueryer) for initial 
 
 ---
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Bin-Cao/PyWPEM&type=Date)](https://star-history.com/#Bin-Cao/PyWPEM&Date)
-
-
+<p align="center">
+  <a href="https://star-history.com/#Bin-Cao/PyWPEM&Date">
+    <img 
+      src="https://api.star-history.com/svg?repos=Bin-Cao/PyWPEM&type=Date" 
+      width="650"
+      style="border: 1px solid #d0d7de; border-radius: 12px; padding: 8px; background: #ffffff;"
+    />
+  </a>
+</p>
 
  
 ---
