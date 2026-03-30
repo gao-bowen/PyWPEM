@@ -99,7 +99,7 @@ Other tools include [XQueryer](https://github.com/Bin-Cao/XQueryer) for initial 
 ⚠️⚠️⚠️ **I am developing a user interface to support all functionalities of PyXplore** (see the [UI repository](https://github.com/WPEM/PyxploreUI)). Through the UI, users only need to input their data and parameters, and the corresponding execution code is generated automatically. Please stay tuned for updates.
 
 
-We welcome contributions from the community. The contributors will **be acknowledged** in the current paper, Substantial contributions to key functionalities may lead to **co-authorship** in future publications for the next version of WPEM
+We welcome contributions from the community. The contributors will **be acknowledged** in the current paper. Substantial contributions to key functionalities may lead to **co-authorship** in future publications for the next version of WPEM
 
 
 ---
