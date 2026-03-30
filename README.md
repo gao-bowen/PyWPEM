@@ -1,18 +1,5 @@
 
 
-<p align="center">
-  <img src="https://github.com/Bin-Cao/TCGPR/assets/86995074/28f69830-4ece-43b3-a887-e78fdb25bcab" width="140" alt="PyWPEM Logo"/>
-</p>
-
-<p align="center">
-  <strong>Python Toolkit for X-ray Diffraction Simulation, Analysis, and AI-driven Structure Refinement</strong> 
-
-</p>
-
-
-
-
-
 
 
 <p align="center">
@@ -66,6 +53,26 @@
     <img src="https://img.shields.io/github/last-commit/Bin-Cao/PyWPEM?style=for-the-badge" />
   </a>
 </p>
+
+
+
+
+
+
+
+<p align="center">
+  <img src="https://github.com/Bin-Cao/TCGPR/assets/86995074/28f69830-4ece-43b3-a887-e78fdb25bcab" width="140" alt="PyWPEM Logo"/>
+</p>
+
+<p align="center">
+  <strong>Python Toolkit for X-ray Diffraction Simulation, Analysis, and AI-driven Structure Refinement</strong> 
+
+</p>
+
+
+
+
+
 
 
 
