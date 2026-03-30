@@ -16,26 +16,61 @@
 
 
 <p align="center">
+  <!-- ===== Links ===== -->
   <a href="https://bin-cao.github.io/PyWPEM/">
-    <img src="https://img.shields.io/badge/Project-Homepage-0A66C2?style=for-the-badge&logo=google-chrome&logoColor=white" />
+    <img src="https://img.shields.io/badge/Homepage-Project-black?style=for-the-badge" />
   </a>
 
   <a href="https://pyxplore.netlify.app/">
-    <img src="https://img.shields.io/badge/Docs-Documentation-1E90FF?style=for-the-badge&logo=readthedocs&logoColor=white" />
+    <img src="https://img.shields.io/badge/Docs-Documentation-grey?style=for-the-badge" />
   </a>
 
   <a href="https://arxiv.org/abs/2602.16372">
-    <img src="https://img.shields.io/badge/arXiv-Paper-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white" />
+    <img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white" />
   </a>
 
   <a href="https://www.researchgate.net/publication/400962382">
-    <img src="https://img.shields.io/badge/ResearchGate-Supplementary-00CCBB?style=for-the-badge&logo=researchgate&logoColor=white" />
+    <img src="https://img.shields.io/badge/Supplementary-Materials-teal?style=for-the-badge" />
   </a>
 
   <a href="https://www.pepy.tech/projects/PyXplore">
-    <img src="https://img.shields.io/badge/Downloads-Statistics-4CAF50?style=for-the-badge&logo=databricks&logoColor=white" />
+    <img src="https://img.shields.io/badge/Downloads-Stats-4CAF50?style=for-the-badge" />
+  </a>
+
+</p>
+
+<p align="center">
+
+  <!-- ===== GitHub Stats ===== -->
+  <a href="https://github.com/Bin-Cao/PyWPEM">
+    <img src="https://img.shields.io/github/stars/Bin-Cao/PyWPEM?style=for-the-badge&logo=github" />
+  </a>
+
+  <a href="https://github.com/Bin-Cao/PyWPEM/forks">
+    <img src="https://img.shields.io/github/forks/Bin-Cao/PyWPEM?style=for-the-badge&logo=github" />
+  </a>
+
+  <a href="https://github.com/Bin-Cao/PyWPEM/issues">
+    <img src="https://img.shields.io/github/issues/Bin-Cao/PyWPEM?style=for-the-badge&logo=github" />
+  </a>
+
+  <a href="https://github.com/Bin-Cao/PyWPEM/issues?q=is%3Aissue+is%3Aclosed">
+    <img src="https://img.shields.io/github/issues-closed/Bin-Cao/PyWPEM?style=for-the-badge&logo=github" />
+  </a>
+
+  <a href="https://github.com/Bin-Cao/PyWPEM/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/Bin-Cao/PyWPEM?style=for-the-badge" />
+  </a>
+
+  <a href="https://github.com/Bin-Cao/PyWPEM/commits/main">
+    <img src="https://img.shields.io/github/last-commit/Bin-Cao/PyWPEM?style=for-the-badge" />
   </a>
 </p>
+
+
+
+
+
 
 
 
