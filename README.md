@@ -1,5 +1,8 @@
 
-
+<p align="center">
+  🌐 <strong>Language:</strong>
+  <a href="README.md">English</a> | <a href="docs/README_zh.md">简体中文</a> | <a href="docs/README_ja.md">日本語</a>
+</p>
 
 
 <p align="center">
