@@ -69,6 +69,9 @@
   <img width="600" src="https://github.com/user-attachments/assets/e37ee8c4-8bdd-4de0-b27e-2ce7270a8a07" />
 </p>
 
+**Bilibiliにて中国語のチュートリアル動画を公開しました：[リンク](https://www.bilibili.com/video/BV1xfRVBQEFv/?spm_id_from=333.337.search-card.all.click&vd_source=6b9872e6d30ffcbac3baf8965e05bab4)**
+
+
 その他のツールとして、初期構造推定のための [XQueryer](https://github.com/Bin-Cao/XQueryer) や、結晶物性予測のための [PRDNet](https://github.com/Bin-Cao/PRDNet) があります。
 
 ⚠️⚠️⚠️ **現在、PyXplore の全機能をサポートするユーザーインターフェースを開発中です**（[UIリポジトリ](https://github.com/WPEM/PyxploreUI) を参照）。このUIでは、ユーザーはデータとパラメータを入力するだけで、対応する実行コードが自動生成されます。今後の更新にご期待ください。
