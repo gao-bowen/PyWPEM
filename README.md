@@ -94,6 +94,10 @@
   <img width="600" src="https://github.com/user-attachments/assets/e37ee8c4-8bdd-4de0-b27e-2ce7270a8a07" />
 </p>
 
+
+**We have released the tutorial videos in Chinese on BiliBili:[Link](https://www.bilibili.com/video/BV1xfRVBQEFv/?spm_id_from=333.337.search-card.all.click&vd_source=6b9872e6d30ffcbac3baf8965e05bab4)**
+
+
 Other tools include [XQueryer](https://github.com/Bin-Cao/XQueryer) for initial structure inference and [PRDNet](https://github.com/Bin-Cao/PRDNet) for crystal property prediction.
 
 
@@ -123,6 +127,8 @@ We welcome contributions from the community. The contributors will **be acknowle
 ## Overview 
 
 **[PyXplore](https://pyxplore.netlify.app/)** is a modular Python framework for **X-ray diffraction (XRD) simulation, decomposition, quantitative analysis, and AI-assisted structure refinement**.
+
+
 
 It integrates:
 

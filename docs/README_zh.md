@@ -72,6 +72,10 @@
   <img width="600" src="https://github.com/user-attachments/assets/e37ee8c4-8bdd-4de0-b27e-2ce7270a8a07" />
 </p>
 
+
+**我们已在哔哩哔哩发布了中文教程视频：[链接](https://www.bilibili.com/video/BV1xfRVBQEFv/?spm_id_from=333.337.search-card.all.click&vd_source=6b9872e6d30ffcbac3baf8965e05bab4)**
+
+
 其他工具包括：[XQueryer](https://github.com/Bin-Cao/XQueryer)（用于初始结构推断）以及 [PRDNet](https://github.com/Bin-Cao/PRDNet)（用于晶体性质预测）。
 
 ⚠️⚠️⚠️ **我正在开发一个用户界面以支持 PyXplore 的全部功能**（参见 [UI 仓库](https://github.com/WPEM/PyxploreUI)）。通过该界面，用户只需输入数据与参数，即可自动生成对应的执行代码。敬请关注后续更新。
