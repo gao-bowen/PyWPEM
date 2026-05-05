@@ -1,1 +1,6 @@
-This folder will contain updated tutorials and video lessons covering installation and algorithm theory. More information about the videos will be disclosed here.
+This folder contains updated tutorials and video lessons covering both installation and algorithmic principles.
+
+* **Class 1**: [Installation](https://www.bilibili.com/video/BV1xfRVBQEFv/?spm_id_from=333.337.search-card.all.click&vd_source=6b9872e6d30ffcbac3baf8965e05bab4)
+* **Class 2**: Single-phase refinement (Part I, Part II)
+* **Class 3**: Multiphase refinement
+* ...
