@@ -67,10 +67,6 @@
   <img src="https://github.com/Bin-Cao/TCGPR/assets/86995074/28f69830-4ece-43b3-a887-e78fdb25bcab" width="140" alt="PyWPEM Logo"/>
 </p>
 
-<p align="center">
-  <strong>Python Toolkit for X-ray Diffraction Simulation, Analysis, and AI-driven Structure Refinement</strong> 
-
-</p>
 
 
 
@@ -87,12 +83,12 @@
 
 
 
+```md id="wpem-highlight"
+> [!NOTE]
+> **WPEM introduces a fundamentally new paradigm for XRD refinement beyond conventional Rietveld methods.**  
+> Instead of fitting diffraction peaks through traditional least-squares profile matching, WPEM formulates the entire diffraction pattern as a physics-constrained probabilistic mixture distribution and performs whole-pattern decomposition through an expectation-maximization framework. By explicitly embedding Bragg consistency into the optimization process, PyWPEM enables stable phase-resolved refinement under severe peak overlap, mixed phases, amorphous backgrounds, and complex experimental conditions. This work represents one of the first attempts to unify AI-driven structure analysis with physically admissible diffraction refinement, potentially redefining the next generation of automated XRD refinement workflows.
+```
 
-
-
-<p align="center">
-  <img width="600" src="https://github.com/user-attachments/assets/e37ee8c4-8bdd-4de0-b27e-2ce7270a8a07" />
-</p>
 
 
 **We have released the tutorial videos in Chinese on BiliBili:[Link](https://www.bilibili.com/video/BV1xfRVBQEFv/?spm_id_from=333.337.search-card.all.click&vd_source=6b9872e6d30ffcbac3baf8965e05bab4)**
