@@ -83,11 +83,10 @@
 
 
 
-```md id="wpem-highlight"
 > [!NOTE]
 > **WPEM introduces a fundamentally new paradigm for XRD refinement beyond conventional Rietveld methods.**  
 > Instead of fitting diffraction peaks through traditional least-squares profile matching, WPEM formulates the entire diffraction pattern as a physics-constrained probabilistic mixture distribution and performs whole-pattern decomposition through an expectation-maximization framework. By explicitly embedding Bragg consistency into the optimization process, PyWPEM enables stable phase-resolved refinement under severe peak overlap, mixed phases, amorphous backgrounds, and complex experimental conditions. This work represents one of the first attempts to unify AI-driven structure analysis with physically admissible diffraction refinement, potentially redefining the next generation of automated XRD refinement workflows.
-```
+
 
 
 
