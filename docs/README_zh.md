@@ -222,22 +222,3 @@ PyWPEM/
 本项目基于 MIT License 发布。
 
 可用于学术与商业用途，使用于科研时请引用相关论文。
-
----
-
-<table>
-  <tr>
-    <td width="160" align="center" valign="top">
-      <img src="https://github.com/user-attachments/assets/7e77bd5a-42d6-45db-b8e6-2c82cac81b9d" width="140" style="border-radius: 50%;"/>
-    </td>
-    <td valign="top">
-      <b>如有任何问题或需要帮助，欢迎联系 CAO Bin：</b><br>
-      📧 Email: <a href="mailto:bcao686@connect.hkust-gz.edu.cn">bcao686@connect.hkust-gz.edu.cn</a><br><br>
-      Cao Bin 是 <b>香港科技大学（广州）</b> 博士研究生，
-      师从 <a href="https://gbaaa.org.hk/en-us/article/67">Zhang Tong-Yi 教授</a>。
-      其研究方向为 <b>AI for Science</b>，重点关注晶体结构智能解析与发现。
-      更多信息请访问其
-      <a href="https://bin-cao.github.io/">个人主页</a>。
-    </td>
-  </tr>
-</table>
