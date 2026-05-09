@@ -206,21 +206,4 @@ PyWPEM/
 学術利用・商用利用ともに自由です。
 学術研究で使用する場合は、関連論文の引用をお願いします。
 
----
-
-<table>
-  <tr>
-    <td width="160" align="center" valign="top">
-      <img src="https://github.com/user-attachments/assets/7e77bd5a-42d6-45db-b8e6-2c82cac81b9d" width="140" style="border-radius: 50%;"/>
-    </td>
-    <td valign="top">
-      <b>お問い合わせやサポートが必要な場合は、以下までご連絡ください：</b><br>
-      📧 Email: <a href="mailto:bcao686@connect.hkust-gz.edu.cn">bcao686@connect.hkust-gz.edu.cn</a><br><br>
-      Cao Bin は、<b>香港科技大学（広州）</b>の博士課程学生であり、 
-      <a href="https://gbaaa.org.hk/en-us/article/67">張統一教授</a>の指導のもと研究を行っています。  
-      研究分野は <b>AI for Science</b>、特に知能化された結晶構造解析と発見です。  
-      詳細は <a href="https://bin-cao.github.io/">個人ホームページ</a>をご覧ください。
-    </td>
-  </tr>
-</table>
 
