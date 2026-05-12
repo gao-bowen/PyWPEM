@@ -9,10 +9,6 @@
 
 
 <p align="center">
-  A next-generation full-pattern refinement framework for complex crystal structure analysis.
-</p>
-
-<p align="center">
   <a href="https://github.com/Bin-Cao/PyWPEM/stargazers">
     <img src="https://img.shields.io/github/stars/Bin-Cao/PyWPEM?style=social" alt="GitHub Stars">
   </a>
