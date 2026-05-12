@@ -1,12 +1,10 @@
 
-<p align="center">
-  <img src="https://github.com/Bin-Cao/TCGPR/assets/86995074/28f69830-4ece-43b3-a887-e78fdb25bcab" width="140" alt="PyWPEM Logo"/>
-</p>
-
-
-
 <h1 align="center">PyWPEM</h1>
 
+
+<p align="center">
+  A next-generation full-pattern refinement framework for complex crystal structure analysis.
+</p>
 
 <p align="center">
   <a href="https://github.com/Bin-Cao/PyWPEM/stargazers">
@@ -25,7 +23,6 @@
     <img src="https://img.shields.io/github/issues-closed/Bin-Cao/PyWPEM" alt="Closed Issues">
   </a>
 </p>
-
 
 
 
