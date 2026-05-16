@@ -277,3 +277,6 @@ This project is released under the MIT License.
 Free for academic and commercial use.
 Please cite related publications when used in scientific research.
 
+## External Source
+
+[PyWPEM Desktop](https://github.com/ZhouXuan-Yu/PyXplore_pyqt?utm_source=chatgpt.com), developed by [@Zhou Xuan-Yu](https://github.com/ZhouXuan-Yu?utm_source=chatgpt.com).
