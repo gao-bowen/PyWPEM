@@ -3,7 +3,7 @@
 
 
 <p align="center">
-  A next-generation full-pattern refinement framework for complex crystal structure analysis.
+  A next-generation whole-pattern refinement framework for complex crystal structure analysis.
 </p>
 
 <p align="center">
