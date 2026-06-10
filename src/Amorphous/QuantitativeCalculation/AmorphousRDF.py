@@ -27,7 +27,7 @@ class RadialDistribution(object):
         if self.work_dir is None:
             DCfolder = 'DecomposedComponents'
         else:
-            DCfolder = os.path.join(work_dir, 'DecomposedComponents')
+            DCfolder = os.path.join(self.work_dir, 'DecomposedComponents')
 
         os.makedirs(DCfolder, exist_ok=True)
 

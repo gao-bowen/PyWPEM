@@ -6,3 +6,7 @@ This folder contains updated tutorials and video lessons covering both installat
 * **Class 3**: [Multiphase refinement](https://www.bilibili.com/video/BV1MkGq6pEhY/?spm_id_from=333.337.search-card.all.click&vd_source=6b9872e6d30ffcbac3baf8965e05bab4)
 * **Class 4**: [XRD Simulations](https://www.bilibili.com/video/BV1HeV96dEMm/)
 * **Class 5**: [In situ XRD](https://www.bilibili.com/video/BV1VrE56jEsS/?spm_id_from=333.337.search-card.all.click&vd_source=6b9872e6d30ffcbac3baf8965e05bab4)
+* **Class 6**: Solid Solution Searching
+* **Class 7**: Amorphous Study
+* **Class 8**: X-Ray Spectrograph 
+* **Class 9 (END)**: Theory and Mathematics
