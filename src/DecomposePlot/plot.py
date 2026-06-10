@@ -1,5 +1,9 @@
-# The drawing module 
-# Author: Bin CAO <binjacobcao@gmail.com>
+"""
+Plotting utilities for decomposed XRD diffraction peaks.
+
+Bin Cao, PhD of HKUST(Guangzhou), https://bin-cao.github.io
+URL : https://github.com/Bin-Cao/PyWPEM
+"""
 
 import matplotlib.pyplot as plt
 import numpy as np

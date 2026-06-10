@@ -1,5 +1,9 @@
-# The background intensity distribution module of WPEM
-# Author: Bin CAO <binjacobcao@gmail.com>
+"""
+Background intensity deduction for XRD patterns (FFT and Savitzky-Golay filtering).
+
+Bin Cao, PhD of HKUST(Guangzhou), https://bin-cao.github.io
+URL : https://github.com/Bin-Cao/PyWPEM
+"""
 
 import re
 import numpy as np

@@ -1,5 +1,9 @@
-# The EM-Bragg Solver defined in WPEM
-# Author: Bin CAO <binjacobcao@gmail.com>
+"""
+EM-Bragg solver: the core WPEM whole-pattern expectation-maximization refinement routine.
+
+Bin Cao, PhD of HKUST(Guangzhou), https://bin-cao.github.io
+URL : https://github.com/Bin-Cao/PyWPEM
+"""
 
 import copy
 import csv

@@ -1,3 +1,10 @@
+"""
+Interactive 3D plotting of crystallographic unit cells.
+
+Bin Cao, PhD of HKUST(Guangzhou), https://bin-cao.github.io
+URL : https://github.com/Bin-Cao/PyWPEM
+"""
+
 import re
 import numpy as np
 import matplotlib.pyplot as plt
@@ -19,11 +26,11 @@ class plotUnitCell(object):
         elevation_slider = widgets.IntSlider(value=0, min=-90, max=90, description='elevation')
         azimuth_slider = widgets.IntSlider(value=0, min=-180, max=180, description='azimuth')
         interact_func = interactive(self.sub_plot,elevation=elevation_slider, azimuth=azimuth_slider)
-        interact_func.children[0].value = 30  
-        interact_func.children[1].value = 60  
+        interact_func.children[0].value = 30
+        interact_func.children[1].value = 60
         display(interact_func)
         plt.show()
-    
+
     def sub_plot(self,elevation, azimuth):
         a = self.lattice_param[0]
         b = self.lattice_param[1]
@@ -76,7 +83,7 @@ class plotUnitCell(object):
             z = self.atom_coordinates[atom][3]
 
             dict =  atomics()
-            # in case errors 
+            # in case errors
             try:
                 # read in the form factor
                 dict[ion]
@@ -111,7 +118,7 @@ class plotUnitCell(object):
         ax.zaxis.set_pane_color((1.0, 1.0, 1.0, 0.0))
 
         ax.grid(False)
-        
+
 
 def getHeavyatom(s):
     """

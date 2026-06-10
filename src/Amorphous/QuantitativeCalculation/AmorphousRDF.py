@@ -1,5 +1,9 @@
-# Amorphous Quantitative Description Module
-# Author: Bin CAO <binjacobcao@gmail.com>
+"""
+Amorphous quantitative description module: radial distribution function (RDF) calculation.
+
+Bin Cao, PhD of HKUST(Guangzhou), https://bin-cao.github.io
+URL : https://github.com/Bin-Cao/PyWPEM
+"""
 
 import pandas as pd
 import numpy as np

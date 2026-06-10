@@ -1,9 +1,8 @@
-"""                                    
-module WPEM: The main call interface of WPEM, including the following functions and subroutines.
+"""
+Main public entry point of the WPEM/PyXplore package; re-exports all high-level user-facing classes and functions.
 
-Author: Bin CAO <binjacobcao@gmail.com>
-
-GitHub : https://github.com/Bin-Cao/PyWPEM
+Bin Cao, PhD of HKUST(Guangzhou), https://bin-cao.github.io
+URL : https://github.com/Bin-Cao/PyWPEM
 """
 
 from .EMBraggOpt.EMBraggSolver import WPEMsolver
@@ -39,6 +38,7 @@ formatted_date_time = now.strftime('%Y-%m-%d %H:%M:%S')
 print(logo)
 print('A Diffraction Refinement Software')
 print('Bin Cao, HKUST(Guangzhou), https://bin-cao.github.io')
+print('Manual: https://pyxplore.netlify.app/')
 print('Paper : https://arxiv.org/abs/2602.16372')
 print('URL : https://github.com/Bin-Cao/PyWPEM')
 print('Executed on :',formatted_date_time, ' | Have a great day.')

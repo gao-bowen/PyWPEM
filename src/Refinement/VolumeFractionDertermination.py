@@ -1,5 +1,9 @@
-# Defining the effect of the structure factor on the diffraction intensity
-# Author: Bin CAO <binjacobcao@gmail.com>
+"""
+Volume- and mass-fraction determination from structure-factor contributions.
+
+Bin Cao, PhD of HKUST(Guangzhou), https://bin-cao.github.io
+URL : https://github.com/Bin-Cao/PyWPEM
+"""
 
 from sympy import *
 import numpy as np

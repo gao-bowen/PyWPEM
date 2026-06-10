@@ -1,5 +1,9 @@
-# Atom Information Searching for a sigle crystal 
-# Author: Bin CAO <binjacobcao@gmail.com>
+"""
+Atomic-site searching and refinement for single-crystal CIF inputs.
+
+Bin Cao, PhD of HKUST(Guangzhou), https://bin-cao.github.io
+URL : https://github.com/Bin-Cao/PyWPEM
+"""
 
 import re
 import os

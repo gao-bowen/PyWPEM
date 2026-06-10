@@ -1,5 +1,9 @@
-# XRD simulation for a sigle crystal 
-# Author: Bin CAO <binjacobcao@gmail.com>
+"""
+XRD pattern simulation for a single crystal from CIF input.
+
+Bin Cao, PhD of HKUST(Guangzhou), https://bin-cao.github.io
+URL : https://github.com/Bin-Cao/PyWPEM
+"""
 
 import sympy
 from sympy import symbols, cos, sin
@@ -575,7 +579,7 @@ def lattice_matrix_to_lattice_constants(lattice_vectors):
 def write_vasp_file(matrix, atom, filename,PeriodicArr=[1,1,1]):
     with open(filename, 'w') as file:
         atom_count = count_atoms(atom)
-        file.write('WPEM developed by BinCAO (HKUST(GZ)) https://github.com/Bin-Cao/WPEM' + '\n')
+        file.write('WPEM developed by BinCAO (HKUST(GZ)) https://github.com/Bin-Cao/PyWPEM' + '\n')
         file.write(' 1.0000000000000000' + '\n')
 
         for row in matrix:

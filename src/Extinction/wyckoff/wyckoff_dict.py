@@ -1,3 +1,10 @@
+"""
+Wyckoff-position symbolic-operation table indexed by space-group number.
+
+Bin Cao, PhD of HKUST(Guangzhou), https://bin-cao.github.io
+URL : https://github.com/Bin-Cao/PyWPEM
+"""
+
 import pandas as pd
 def load():
     return pd.DataFrame(dict)

@@ -1,5 +1,9 @@
-# Extended X-ray absorption fine structure
-# Author: Bin CAO <binjacobcao@gmail.com>
+"""
+Extended X-ray absorption fine structure (EXAFS) analysis.
+
+Bin Cao, PhD of HKUST(Guangzhou), https://bin-cao.github.io
+URL : https://github.com/Bin-Cao/PyWPEM
+"""
 import os
 import warnings
 import pywt

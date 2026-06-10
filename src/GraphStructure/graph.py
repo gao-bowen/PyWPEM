@@ -1,5 +1,9 @@
-# Calculate the graph structure of crystals
-# Author: Bin CAO <binjacobcao@gmail.com>
+"""
+Generation of graph-structured representations of crystals from CIF files.
+
+Bin Cao, PhD of HKUST(Guangzhou), https://bin-cao.github.io
+URL : https://github.com/Bin-Cao/PyWPEM
+"""
 
 from ..Extinction.XRDpre import UnitCellAtom,det_system
 from ..Extinction.CifReader import CifFile

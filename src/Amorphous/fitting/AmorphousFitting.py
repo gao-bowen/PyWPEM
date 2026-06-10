@@ -1,5 +1,9 @@
-# Amorphous Qualitative Description Module
-# Author: Bin CAO <binjacobcao@gmail.com>
+"""
+Amorphous qualitative description module: multi-peak fitting of amorphous XRD patterns.
+
+Bin Cao, PhD of HKUST(Guangzhou), https://bin-cao.github.io
+URL : https://github.com/Bin-Cao/PyWPEM
+"""
 
 import math
 import heapq

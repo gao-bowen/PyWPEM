@@ -1,5 +1,9 @@
-# The Bragg step defined in WPEM
-# Author: Bin CAO <binjacobcao@gmail.com>
+"""
+Symbolic Bragg-law / d-spacing derivations for the seven crystal systems.
+
+Bin Cao, PhD of HKUST(Guangzhou), https://bin-cao.github.io
+URL : https://github.com/Bin-Cao/PyWPEM
+"""
 
 from sympy import *
 import copy

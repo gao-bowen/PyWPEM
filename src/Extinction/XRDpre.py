@@ -1,5 +1,9 @@
-# Calculation of Diffraction Conditions and Extinction via Crystal Symmetry
-# Author: Bin CAO <binjacobcao@gmail.com>
+"""
+Calculation of diffraction conditions and systematic extinctions via crystal symmetry.
+
+Bin Cao, PhD of HKUST(Guangzhou), https://bin-cao.github.io
+URL : https://github.com/Bin-Cao/PyWPEM
+"""
 
 import os
 import warnings
@@ -498,86 +502,89 @@ def structure_extinction(AtomCoordinates,HKL,two_theta,wavelength):
 def mult_rule(H, K,L,system):
     """
     Define the multiplicity factor resulting from crystal symmetry
+    Uses the highest Laue class for each crystal system (matches pymatgen
+    family counts for the corresponding holohedry).
     """
-    if system == 1: # Cubic
-        if (H == K == 0 and L != 0) or (H == L == 0 and K != 0 ) or  (K == L == 0 and H != 0):
-            mult = 6
-        elif (H == K !=  0 and L == 0) or (H == L != 0 and K == 0) or (K == L != 0 and H == 0):
-            mult = 12
-        elif H != K and K != L and H != L and H!=0 and K!=0 and L!=0 :
-            mult = 48
-        elif H == K == L != 0:
-            mult = 8
-        else:
-            mult = 24
-            
-    elif system == 2 : # Hexagonal
-        if (H == L == 0 and K != 0 ) or  (K == L == 0 and H != 0):
-            mult = 6
-        elif H == K == 0 and L != 0:
-            mult = 2
-        elif H == K !=  0 and L == 0:
-            mult = 6
-        elif H != K and K != L and H != L and H!=0 and K!=0 and L!=0 :
-            mult = 24
-        elif H == K == L != 0:
-            mult = 1
-        else:
-            mult = 12
-    
-    elif system == 5: # Rhombohedral
-        if (H == K == 0 and L != 0) or (H == L == 0 and K != 0 ) or  (K == L == 0 and H != 0):
-            mult = 6
-        elif (H == K !=  0 and L == 0) or (H == L != 0 and K == 0) or (K == L != 0 and H == 0):
-            mult = 6
-        elif H != K and K != L and H != L and H!=0 and K!=0 and L!=0  :
-            mult = 24
-        elif H == K == L != 0:
-            mult = 1
-        else:
-            mult = 12
+    h, k, l = abs(H), abs(K), abs(L)
+    nz = (h != 0) + (k != 0) + (l != 0)
+    if nz == 0:
+        return 1
 
-    elif system == 3: # Tetragonal
-        if (H == L == 0 and K != 0 ) or  (K == L == 0 and H != 0):
-            mult = 4
-        elif H == K == 0 and L != 0:
+    if system == 1: # Cubic (m-3m)
+        if nz == 1:
+            mult = 6
+        elif nz == 2:
+            a, b = sorted([h, k, l], reverse=True)[:2]
+            mult = 12 if a == b else 24
+        else:
+            s = sorted([h, k, l])
+            if s[0] == s[2]:
+                mult = 8
+            elif s[0] == s[1] or s[1] == s[2]:
+                mult = 24
+            else:
+                mult = 48
+
+    elif system == 2: # Hexagonal (6/mmm)
+        if h == 0 and k == 0:
             mult = 2
-        elif H == K !=  0 and L == 0:
+        elif l == 0:
+            if h == 0 or k == 0 or h == k:
+                mult = 6
+            else:
+                mult = 12
+        else:
+            if h == 0 or k == 0 or h == k:
+                mult = 12
+            else:
+                mult = 24
+
+    elif system == 5: # Rhombohedral (-3m, rhombohedral axes)
+        s = sorted([h, k, l])
+        if nz == 1:
+            mult = 6
+        elif nz == 2:
+            mult = 6 if s[1] == s[2] else 12
+        else:
+            if s[0] == s[2]:
+                mult = 2
+            elif s[0] == s[1] or s[1] == s[2]:
+                mult = 6
+            else:
+                mult = 12
+
+    elif system == 3: # Tetragonal (4/mmm)
+        if h == 0 and k == 0:
+            mult = 2
+        elif l == 0:
+            if h == 0 or k == 0 or h == k:
+                mult = 4
+            else:
+                mult = 8
+        else:
+            if h == 0 or k == 0 or h == k:
+                mult = 8
+            else:
+                mult = 16
+
+    elif system == 4: # Orthorhombic (mmm)
+        if nz == 1:
+            mult = 2
+        elif nz == 2:
             mult = 4
-        elif  H != K and K != L and H != L and H!=0 and K!=0 and L!=0 :
-            mult = 16
-        elif H == K == L != 0:
-            mult = 1
         else:
             mult = 8
 
-    elif system == 4: # Orthorhombic
-        if (H == K == 0 and L != 0) or (H == L == 0 and K != 0 ) or  (K == L == 0 and H != 0):
+    elif system == 6: # Monoclinic (2/m, unique b)
+        if k == 0:
             mult = 2
-        elif H != K and K != L and H != L and H!=0 and K!=0 and L!=0 :
-            mult = 8
-        elif (H == K == L != 0) or (H == K != 0 and L == 0) or (H == K != L and H != 0 and L != 0):
-            mult = 1
-        else:
-            mult = 4
-        
-    elif system == 6: # Monoclinic
-        if (H == K == 0 and L != 0) or (H == L == 0 and K != 0 ) or  (K == L == 0 and H != 0):
-            mult = 2
-        elif H != K and K != L and H != L and H!=0 and K!=0 and L!=0 :
-            mult = 4
-        elif (H == K == L != 0) or (H == K != 0 and L == 0) or (H == K != L and H != 0 and L != 0):
-            mult = 1
-        elif H != L and H!=0 and L!=0 and K==0:
+        elif h == 0 and l == 0:
             mult = 2
         else:
             mult = 4
-       
-    elif system == 7: # Triclinic
-        if (H == K == L != 0) or (H == K != 0 and L == 0) or (H == K != L and H != 0 and L != 0):
-            mult = 1
-        else:
-            mult = 2
+
+    elif system == 7: # Triclinic (-1)
+        mult = 2
     else:
         raise ValueError
     return mult

@@ -1,5 +1,9 @@
-# Some functions for auxiliary calculation
-# Author: Bin CAO <binjacobcao@gmail.com>
+"""
+Auxiliary numerical routines used by the WPEM EM-Bragg solver.
+
+Bin Cao, PhD of HKUST(Guangzhou), https://bin-cao.github.io
+URL : https://github.com/Bin-Cao/PyWPEM
+"""
 
 import copy
 import numpy as np

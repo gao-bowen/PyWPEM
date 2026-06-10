@@ -1,5 +1,9 @@
-# X-ray photoelectron spectroscopy decomposition Module
-# Author: Bin CAO <binjacobcao@gmail.com>
+"""
+EM-based decomposition module for X-ray photoelectron spectroscopy (XPS).
+
+Bin Cao, PhD of HKUST(Guangzhou), https://bin-cao.github.io
+URL : https://github.com/Bin-Cao/PyWPEM
+"""
 
 import re
 import copy
