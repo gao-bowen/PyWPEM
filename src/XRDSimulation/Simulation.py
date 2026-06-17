@@ -49,16 +49,16 @@ class XRD_profile(object):
         if type(ReSolidSolution) == list:
             _range = (two_theta_range[0],two_theta_range[1])
             if LatticCs == None:
-                LatticCs, Atom_coordinate,_ = profile(wavelength,_range,cal_extinction = False).generate(filepath)
+                LatticCs, Atom_coordinate,_ = profile(wavelength,_range,cal_extinction = False,work_dir=work_dir).generate(filepath)
             elif type(LatticCs) == list and len(LatticCs) == 6 : 
-                _, Atom_coordinate = profile(wavelength,_range,cal_extinction = False).generate(filepath)
+                _, Atom_coordinate,_ = profile(wavelength,_range,cal_extinction = False,work_dir=work_dir).generate(filepath)
             else : print('Type Error of Param LatticCs')
         else:
             _range = (two_theta_range[0],two_theta_range[1])
             if LatticCs == None:
-                LatticCs, Atom_coordinate,_ = profile(wavelength,_range).generate(filepath)
+                LatticCs, Atom_coordinate,_ = profile(wavelength,_range,work_dir=work_dir).generate(filepath)
             elif type(LatticCs) == list and len(LatticCs) == 6 : 
-                _, Atom_coordinate = profile(wavelength,_range).generate(filepath)
+                _, Atom_coordinate,_ = profile(wavelength,_range,work_dir=work_dir).generate(filepath)
             else : print('Type Error of Param LatticCs')
         print('\n')
 
@@ -113,7 +113,7 @@ class XRD_profile(object):
             else:
                 # readin the refined parameters
                 print('WPEM simulates the peaks by the decomposed peak shapes')
-                peak = pd.read_csv(os.path.join(work_dir,'output_xrd','HKL.csv'.format(filepath[-11:-4])))
+                peak = pd.read_csv(os.path.join(work_dir,'output_xrd','{}HKL.csv'.format(filepath[-11:-4])))
                 data = pd.read_csv(CSWPEMout)
                 self.mu_list = data['mu_i'].tolist() 
                 self.gamma_list = data['L_gamma_i'].tolist() 

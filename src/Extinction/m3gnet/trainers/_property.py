@@ -184,11 +184,11 @@ class Trainer:
         callback_list.set_model(self.model)
         stop_training = False
 
-        @tf.function(experimental_relax_shapes=True)
+        @tf.function(reduce_retracing=True)
         def predict(model, graph_batch):
             return model(graph_batch)
 
-        @tf.function(experimental_relax_shapes=True)
+        @tf.function(reduce_retracing=True)
         def train_one_step(model, graph_list, target_list):
             with tf.GradientTape() as tape:
                 pred_list: tf.Tensor = model(graph_list)

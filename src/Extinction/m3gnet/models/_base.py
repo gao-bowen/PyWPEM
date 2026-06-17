@@ -130,7 +130,7 @@ class BasePotential(tf.keras.Model, ABC):
         """
         return self.get_efs(obj, include_stresses=False)
 
-    @tf.function(experimental_relax_shapes=True)
+    @tf.function(reduce_retracing=True)
     def get_ef_tensor(self, graph: List[tf.Tensor]) -> tuple:
         """
         get energy and force from a list repr of graph
@@ -160,7 +160,7 @@ class BasePotential(tf.keras.Model, ABC):
             obj = obj.as_tf().as_list()
         return self.get_efs_tensor(obj, include_stresses=include_stresses)
 
-    @tf.function(experimental_relax_shapes=True)
+    @tf.function(reduce_retracing=True)
     def get_efs_tensor(self, graph: List[tf.Tensor], include_stresses: bool = True) -> tuple:
         """
         get energy and force from a list repr of a
@@ -250,7 +250,7 @@ class Potential(BasePotential):
         self.model = model
         self.graph_converter = model.graph_converter
 
-    @tf.function(experimental_relax_shapes=True)
+    @tf.function(reduce_retracing=True)
     def get_energies(self, graph: List) -> tf.Tensor:
         """
         get energies from a list repr of a graph

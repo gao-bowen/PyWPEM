@@ -14,13 +14,16 @@ import numpy as np
 import pandas as pd
 import re
 import sys
+try:
+    import spglib
+except ImportError:
+    spglib = None
 from .wyckoff import wyckoff_dict
 from .CifReader import CifFile
 from ..XRDSimulation.DiffractionGrometry.atom import atomics
 from ..EMBraggOpt.BraggLawDerivation import BraggLawDerivation
 from ..Plot.UnitCell import plotUnitCell
 from ..EMBraggOpt.WPEMFuns.SolverFuns import cal_system
-from .Relaxer import _Relaxer
 
 class profile:
     def __init__(self, wavelength='CuKa',two_theta_range=(10, 90),show_unitcell=False,cal_extinction = True,relaxation=False,work_dir=None):
@@ -131,7 +134,7 @@ class profile:
         difc_peak = pd.DataFrame(res_HKL,columns=['H','K','L'])
         difc_peak['Distance'] = d_res_HKL
         difc_peak['2theta/TOF'] = 2 * np.arcsin(self.wavelength /2/np.array(difc_peak['Distance'])) * 180 / np.pi
-        difc_peak['Mult'] = mult_dic(res_HKL,system)
+        difc_peak['Mult'] = mult_dic(res_HKL,system,latt,AtomCoordinates)
         difc_peak.sort_values(by=['2theta/TOF'], ascending=True, inplace=True)
         
         difc_peak.to_csv(os.path.join(self.opxrdfolder,'{}HKL.csv'.format(filepath[-11:-4])),index=False)
@@ -140,7 +143,7 @@ class profile:
         ex_peak = pd.DataFrame(ex_HKL,columns=['H','K','L'])
         ex_peak['Distance'] = d_ex_HKL
         ex_peak['2theta/TOF'] = 2 * np.arcsin(self.wavelength /2/np.array(ex_peak['Distance'])) * 180 / np.pi
-        ex_peak['Mult'] = mult_dic(ex_HKL,system)
+        ex_peak['Mult'] = mult_dic(ex_HKL,system,latt,AtomCoordinates)
         ex_peak.sort_values(by=['2theta/TOF'], ascending=True, inplace=True)
 
         ex_peak.to_csv(os.path.join(self.opxrdfolder,'{}_Extinction_peak.csv'.format(filepath[-11:-4])),index=False)
@@ -162,6 +165,8 @@ class profile:
 
         # relaxition
         if self.relaxation == True:
+            from .Relaxer import _Relaxer
+
             print('M2GNET is applied for calculating the fromation energy per atom')
             lattice, final_energy_per_atom = _Relaxer(system,latt,AtomCoordinates)
         else:pass
@@ -258,7 +263,41 @@ def det_system(Lattice_constants):
         crystal_sys = 6
     return crystal_sys
 
-def de_redundant(grid, d_list):
+def _hkl_family_key(HKL, system):
+    h, k, l = [int(x) for x in HKL]
+    ah, ak, al = abs(h), abs(k), abs(l)
+
+    if system == 1:  # Cubic: permutations and signs are equivalent.
+        return tuple(sorted([ah, ak, al]))
+
+    if system == 2:  # Hexagonal: six-fold operations in the h-k plane.
+        hk_orbit = [
+            (h, k), (-k, h + k), (-h - k, h),
+            (-h, -k), (k, -h - k), (h + k, -h),
+        ]
+        hk_orbit += [(-a, -b) for a, b in hk_orbit]
+        return min(hk_orbit), al
+
+    if system == 3:  # Tetragonal: h and k are interchangeable; l is unique.
+        return tuple(sorted([ah, ak])), al
+
+    if system == 4:  # Orthorhombic: only sign changes are equivalent.
+        return ah, ak, al
+
+    if system == 5:  # Rhombohedral approximation under cyclic permutations.
+        orbit = [(h, k, l), (k, l, h), (l, h, k)]
+        orbit += [(-a, -b, -c) for a, b, c in orbit]
+        return min(orbit)
+
+    if system == 6:  # Monoclinic, unique b: two-fold operation plus inversion.
+        orbit = [(h, k, l), (-h, k, -l), (-h, -k, -l), (h, -k, l)]
+        return min(orbit)
+
+    # Triclinic: Friedel pair only.
+    return min((h, k, l), (-h, -k, -l))
+
+
+def de_redundant(grid, d_list, system):
     """
     Multiplicity due to spatial symmetry
     """
@@ -268,13 +307,16 @@ def de_redundant(grid, d_list):
 
     res_HKL = []
     res_d = []
+    res_family = []
 
     index = -1
     for i in d_list:
-        item = get_float(i,4)
+        item = round(i, 6)
         index += 1
-        if item not in res_d:
+        family = _hkl_family_key(grid[index], system)
+        if (item, family) not in res_family:
             res_d.append(item)
+            res_family.append((item, family))
             res_HKL.append(grid[index])
     return res_HKL, res_d
 
@@ -318,7 +360,7 @@ def Diffraction_index(system,latt,cal_wavelength,two_theta_range):
     grid = _grid.drop(index[0])
 
     # return all HKL which are satisfied Bragg law
-    res_HKL, res_d = de_redundant(grid, d_list)
+    res_HKL, res_d = de_redundant(grid, d_list, system)
     return res_HKL, res_d
 
 def unit_cell_range(ori_atom):
@@ -590,10 +632,60 @@ def mult_rule(H, K,L,system):
     return mult
 
 
-def mult_dic(HKL_list,system):
+def _lattice_parameters_to_matrix(a, b, c, alpha, beta, gamma):
+    alpha = np.radians(alpha)
+    beta = np.radians(beta)
+    gamma = np.radians(gamma)
+    a1 = a
+    b1 = b * np.cos(gamma)
+    b2 = b * np.sin(gamma)
+    c1 = c * np.cos(beta)
+    c2 = c * (np.cos(alpha) - np.cos(beta) * np.cos(gamma)) / np.sin(gamma)
+    c3 = c * np.sqrt(
+        1 + 2 * np.cos(alpha) * np.cos(beta) * np.cos(gamma)
+        - np.cos(alpha) ** 2 - np.cos(beta) ** 2 - np.cos(gamma) ** 2
+    ) / np.sin(gamma)
+    return [[a1, 0, 0], [b1, b2, 0], [c1, c2, c3]]
+
+
+def spglib_multiplicity(HKL,latt,AtomCoordinates,symprec=1e-2):
+    if spglib is None:
+        raise ImportError("spglib is not available")
+    hkl = np.array(HKL, dtype=int)
+    if not np.any(hkl):
+        return 1
+
+    lattice = _lattice_parameters_to_matrix(latt[0],latt[1],latt[2],latt[3],latt[4],latt[5])
+    positions = []
+    numbers = []
+    species = {}
+    for atom in AtomCoordinates:
+        symbol = getHeavyatom(atom[0])
+        if symbol not in species:
+            species[symbol] = len(species) + 1
+        positions.append([float(atom[1]) % 1.0, float(atom[2]) % 1.0, float(atom[3]) % 1.0])
+        numbers.append(species[symbol])
+
+    symmetry = spglib.get_symmetry((lattice, positions, numbers), symprec=symprec)
+    equivalents = set()
+    for rotation in symmetry["rotations"]:
+        inv_rotation = np.rint(np.linalg.inv(rotation)).astype(int)
+        equivalent = tuple((hkl @ inv_rotation).astype(int).tolist())
+        equivalents.add(equivalent)
+        equivalents.add(tuple((-np.array(equivalent)).astype(int).tolist()))
+    return len(equivalents)
+
+
+def mult_dic(HKL_list,system,latt=None,AtomCoordinates=None):
     mult = []
     for i in range(len(HKL_list)):
-          mult.append(mult_rule(HKL_list[i][0],HKL_list[i][1],HKL_list[i][2],system))
+        if latt is not None and AtomCoordinates is not None:
+            try:
+                mult.append(spglib_multiplicity(HKL_list[i],latt,AtomCoordinates))
+                continue
+            except Exception:
+                pass
+        mult.append(mult_rule(HKL_list[i][0],HKL_list[i][1],HKL_list[i][2],system))
     return mult
 
 
@@ -896,4 +988,3 @@ def find_atomic_mass(element_symbol):
         return atomic_masses[element_symbol]
     else:
         return None  
-

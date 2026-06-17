@@ -185,7 +185,7 @@ class PotentialTrainer:
         callback_list.on_train_begin()
         callback_list.set_model(self.potential.model)
 
-        @tf.function(experimental_relax_shapes=True)
+        @tf.function(reduce_retracing=True)
         def train_one_step(potential, graph_list, target_list):
             with tf.GradientTape() as tape:
                 pred_list = potential.get_efs_tensor(graph_list, include_stresses=has_stress)
