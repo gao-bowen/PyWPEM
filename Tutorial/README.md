@@ -8,5 +8,5 @@ This folder contains updated tutorials and video lessons covering both installat
 * **Class 5**: [In situ XRD](https://www.bilibili.com/video/BV1VrE56jEsS/?spm_id_from=333.337.search-card.all.click&vd_source=6b9872e6d30ffcbac3baf8965e05bab4)
 * **Class 6**: [Solid Solution Searching](https://www.bilibili.com/video/BV1fDJg62EAi/?spm_id_from=333.1387.homepage.video_card.click&vd_source=773e0c92141f498497cfafd0112fc146)
 * **Class 7**: [Amorphous Study](https://www.bilibili.com/video/BV1o5jA67EmS/?spm_id_from=333.337.search-card.all.click&vd_source=773e0c92141f498497cfafd0112fc146)
-* **Class 8**: X-Ray Spectrograph 
-* **Class 9 (END)**: Theory and Mathematics
+* **Class 8**: [X-Ray Spectrograph](https://www.bilibili.com/video/BV1uLjS6PEaP/?spm_id_from=333.1387.homepage.video_card.click)
+* **Class 9 (END)**: [Theory and Mathematics](https://www.bilibili.com/video/BV1TJjS6aE4D/?spm_id_from=333.1387.homepage.video_card.click)
